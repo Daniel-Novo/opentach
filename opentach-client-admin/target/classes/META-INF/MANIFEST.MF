@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: opentach-client-admin
+Implementation-Version: dev
+Built-By: daniel
+Implementation-Vendor-Id: com.imatia.opentach
+Build-Jdk: 1.8.0_252
+Created-By: Maven Integration for Eclipse
+Utilmize-App-Version: dev
+Implementation-Vendor: OPENSERVICES
+
