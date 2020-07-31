@@ -7,8 +7,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.opentach.web.server.dao.CdBloqueosEmpresaDao;
 import com.opentach.web.server.interfaces.IBloqueosService;
-import com.opentach.web.server.Daos.CDBLOQUEOS_EMPRESADao;
 import com.ontimize.db.EntityResult;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
@@ -18,7 +18,7 @@ import com.ontimize.jee.server.dao.IOntimizeDaoSupport;
 public class BloqueoService implements IBloqueosService{
 
     private static final Logger logger = LoggerFactory.getLogger(BloqueoService.class);
-    @Autowired private CDBLOQUEOS_EMPRESADao bloqueoDao;
+    @Autowired private CdBloqueosEmpresaDao bloqueoDao;
     @Autowired private DefaultOntimizeDaoHelper daoHelper;
  
    
@@ -27,25 +27,25 @@ public class BloqueoService implements IBloqueosService{
 	public EntityResult bloqueoQuery(Map<String, Object> keysValues, List<String> attributes)
 			throws OntimizeJEERuntimeException {
 		// TODO Auto-generated method stub
-		return this.daoHelper.query((IOntimizeDaoSupport) this.bloqueoDao, keysValues, attributes);
+		return this.daoHelper.query( this.bloqueoDao, keysValues, attributes);
 	}
 
 	@Override
 	public EntityResult bloqueoInsert(Map<String, Object> attributes) throws OntimizeJEERuntimeException {
 		// TODO Auto-generated method stub
-		 return this.daoHelper.insert((IOntimizeDaoSupport) this.bloqueoDao, attributes);
+		 return this.daoHelper.insert( this.bloqueoDao, attributes);
 	}
 
 	@Override
 	public EntityResult bloqueoUpdate(Map<String, Object> attributes, Map<String, Object> keyValues)
 			throws OntimizeJEERuntimeException {
 		// TODO Auto-generated method stub
-		 return this.daoHelper.update((IOntimizeDaoSupport) this.bloqueoDao, attributes, keyValues);
+		 return this.daoHelper.update( this.bloqueoDao, attributes, keyValues);
 	}
 
 	@Override
 	public EntityResult bloqueoDelete(Map<String, Object> keyValues) throws OntimizeJEERuntimeException {
 		// TODO Auto-generated method stub
-		return this.daoHelper.delete((IOntimizeDaoSupport) this.bloqueoDao, keyValues);
+		return this.daoHelper.delete( this.bloqueoDao, keyValues);
 	}
 }

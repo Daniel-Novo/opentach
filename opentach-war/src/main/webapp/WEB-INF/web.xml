@@ -152,16 +152,16 @@
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-<!-- <filter> -->
-<!--   <filter-name>corsSecurityFilterChain</filter-name> -->
-<!--   <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class> -->
-<!--  </filter> -->
+<filter>
+  <filter-name>corsSecurityFilterChainRestWeb</filter-name>
+  <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+ </filter>
 
 <!-- Definimos el patrón de la url que accederá al filtro -->
-<!--  <filter-mapping> -->
-<!--   <filter-name>corsSecurityFilterChain</filter-name> -->
-<!--   <url-pattern>/restweb/*</url-pattern> -->
-<!--  </filter-mapping> -->
+ <filter-mapping>
+  <filter-name>corsSecurityFilterChainRestWeb</filter-name>
+  <url-pattern>/restweb/*</url-pattern>
+ </filter-mapping>
 	<!-- *********** MAPEO DE SERVLETS ********** -->
 	<servlet-mapping>
 		<servlet-name>J2MEFileReceptionServlet</servlet-name>

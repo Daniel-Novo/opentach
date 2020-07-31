@@ -125,7 +125,7 @@
 		access-decision-manager-ref="accessDecisionManager" />
 
 	<!-- CORS -->
-	<bean id="corsSecurityFilterChain" class="com.ontimize.jee.server.security.cors.OntimizeJeeCorsFilter" />
+	<bean id="corsSecurityFilterChainRestWeb" class="com.ontimize.jee.server.security.cors.OntimizeJeeCorsFilter" />
 	<oss:cors>
 		<oss:mapping path="/restweb/**" allowed-methods="GET, PUT, POST, DELETE" exposed-headers="X-Auth-Token" />
 	</oss:cors>
